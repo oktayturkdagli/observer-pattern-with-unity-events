@@ -1483,7 +1483,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651136696}
-  - component: {fileID: 651136697}
   m_Layer: 7
   m_Name: walls
   m_TagString: Untagged
@@ -1511,18 +1510,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &651136697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651136695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1243efdf01a834cce9a5fd06dbbcf99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &656880002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2408,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1344739787}
-  - component: {fileID: 1344739786}
   - component: {fileID: 1344739788}
   m_Layer: 0
   m_Name: pony_observer_system
@@ -2430,18 +2416,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1344739786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344739785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560e16e27aa584b689ea38f62f8d6d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1344739787
 Transform:
   m_ObjectHideFlags: 0
@@ -2468,25 +2442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f7f21b79bc04ed7afbcacb12a9720c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onLeftClicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1344739788}
-        m_TargetAssemblyTypeName: UnityEvents, Assembly-CSharp
-        m_MethodName: PrintLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRightClicked:
+  onWallTriggerEnter:
     m_PersistentCalls:
       m_Calls: []
-  onPrint:
+  onWallTriggerExit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1353533860

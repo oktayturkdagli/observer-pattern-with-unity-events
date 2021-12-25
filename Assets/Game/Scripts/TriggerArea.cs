@@ -7,12 +7,11 @@ public class TriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UnityEvents.current.onWallTriggerEnter.Invoke(id);
+        UnityEventManager.current.onWallTriggerEnter.Invoke(id);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        UnityEvents.current.onWallTriggerExit.Invoke(id);
-
+        UnityEventManager.current.onWallTriggerExit.Invoke(id);
     }
 }

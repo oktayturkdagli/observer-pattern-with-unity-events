@@ -6,12 +6,14 @@ public class DoorController : MonoBehaviour
 
     private void Start()
     {
-        UnityEvents.current.onWallTriggerEnter.AddListener(OnDoorwayOpen);
-        UnityEvents.current.onWallTriggerExit.AddListener(OnDoorwayClose);
+        //Subscribe to events
+        //Functions that will run when events are triggered are determined
+        UnityEventManager.current.onWallTriggerEnter.AddListener(DoorOpen);
+        UnityEventManager.current.onWallTriggerExit.AddListener(DoorClose);
 
     }
 
-    private void OnDoorwayOpen(int id)
+    private void DoorOpen(int id)
     {
         if (id == this.id)
         {
@@ -19,7 +21,7 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    private void OnDoorwayClose(int id)
+    private void DoorClose(int id)
     {
         if (id == this.id)
         {
@@ -27,10 +29,10 @@ public class DoorController : MonoBehaviour
         }
     }
 
-
     public void OnDestroy()
     {
-        UnityEvents.current.onWallTriggerEnter.RemoveListener(OnDoorwayOpen);
-        UnityEvents.current.onWallTriggerExit.RemoveListener(OnDoorwayClose);
+        //Unsubscribe to events
+        UnityEventManager.current.onWallTriggerEnter.RemoveListener(DoorOpen);
+        UnityEventManager.current.onWallTriggerExit.RemoveListener(DoorClose);
     }
 }
